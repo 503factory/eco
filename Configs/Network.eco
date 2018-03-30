@@ -1,0 +1,11 @@
+{
+ "PublicServer": false,
+ "Password": "survivor503",
+ "IPAddress": "213.32.86.225",
+ "GameServerPort": "3000",
+ "WebServerPort": "38953",
+ "DetectNAT": true,
+ "Rate": 10,
+ "ServerBrowserService": "https://ecoauth.strangeloopgames.com/game",
+ "Description": "503factory"
+}

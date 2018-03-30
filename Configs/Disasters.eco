@@ -1,0 +1,5 @@
+{
+  "$id": "1",
+  "CreateMeteor": true,
+  "MeteorImpactDays": 120.0
+}

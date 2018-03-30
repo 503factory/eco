@@ -1,0 +1,62 @@
+namespace Eco.Mods.TechTree
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using Eco.Gameplay.Blocks;
+    using Eco.Gameplay.Components;
+    using Eco.Gameplay.DynamicValues;
+    using Eco.Gameplay.Items;
+    using Eco.Gameplay.Objects;
+    using Eco.Gameplay.Players;
+    using Eco.Gameplay.Skills;
+    using Eco.Gameplay.Systems.TextLinks;
+    using Eco.Shared.Localization;
+    using Eco.Shared.Serialization;
+    using Eco.Shared.Utils;
+    using Eco.World;
+    using Eco.World.Blocks;
+    using Eco.Gameplay.Pipes;
+
+    [RequiresSkill(typeof(GlassworkingSkill), 1)]   
+    public partial class GlassRecipe : Recipe
+    {
+        public GlassRecipe()
+        {
+            this.Products = new CraftingElement[]
+            {
+                new CraftingElement<GlassItem>(),          
+            };
+            this.Ingredients = new CraftingElement[]
+            {
+                new CraftingElement<SandItem>(typeof(GlassProductionEfficiencySkill), 4, GlassProductionEfficiencySkill.MultiplicativeStrategy),
+            };
+            this.CraftMinutes = CreateCraftTimeValue(typeof(GlassRecipe), Item.Get<GlassItem>().UILink(), 1, typeof(GlassProductionSpeedSkill));    
+            this.Initialize("Glass", typeof(GlassRecipe));
+
+            CraftingComponent.AddRecipe(typeof(KilnObject), this);
+        }
+    }
+
+    [Serialized]
+    [Solid, Wall, Constructed,BuildRoomMaterialOption]
+    [Tier(2)]                                          
+    [RequiresSkill(typeof(GlassProductionEfficiencySkill), 1)]   
+    public partial class GlassBlock :
+        Block           
+    { }
+
+    [Serialized]
+    [MaxStackSize(10)]                                       
+    [Weight(10000)]      
+    [Currency]              
+    public partial class GlassItem :
+    BlockItem<GlassBlock>
+    {
+        public override string FriendlyName { get { return "Glass"; } }
+        public override string FriendlyNamePlural { get { return "Glass"; } } 
+        public override string Description { get { return "A transparent, solid material useful for more than just windows."; } }
+
+    }
+
+}

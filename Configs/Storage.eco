@@ -1,0 +1,6 @@
+{
+  "$id": "1",
+  "SaveFrequency": 60,
+  "CompressionLevel": "Default",
+  "CleanupFilesOnExceptions":  false
+}

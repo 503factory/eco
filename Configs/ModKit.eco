@@ -1,0 +1,11 @@
+{
+  "$id": "1",
+  "WhitelistEnabled": false,
+  "Whitelist": {
+    "$id": "2",
+    "System.String": {
+      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+      "$values": []
+    }
+  }
+}

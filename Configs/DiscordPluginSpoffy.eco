@@ -1,0 +1,24 @@
+{
+  "$id": "1",
+  "BotToken": "NDE5NjgyNDAzNTc0MDg3Njgx.DZLlIA.TOALt09JQeNu_oU_xMY_JOb6qWc",
+  "ServerLogo": "https://www.google.fr/imgres?imgurl=https%3A%2F%2Fsteamuserimages-a.akamaihd.net%2Fugc%2F915792898565539507%2FF022DAD3B74CA30452E37C5CB38D8DEBCDCC3C93%2F%3Finterpolation%3Dlanczos-none%26output-format%3Djpeg%26output-quality%3D95%26fit%3Dinside%257C128%253A128%26composite-to%3D*%2C*%257C128%253A128%26background-color%3Dblack&imgrefurl=https%3A%2F%2Fsteamcommunity.com%2Fapp%2F382310&docid=BTmIS2b_zNYmWM&tbnid=2BxIFw0GP-yj4M%3A&vet=10ahUKEwjky_7Ci4PaAhWDCsAKHQF2CFkQMwhBKAswCw..i&w=128&h=128&safe=off&bih=919&biw=1680&q=eco%20survival%20web%20page%20bug&ved=0ahUKEwjky_7Ci4PaAhWDCsAKHQF2CFkQMwhBKAswCw&iact=mrc&uact=8",
+  "ServerIP": "213.32.86.225:38953",
+  "PlayerConfigs": [
+    {
+      "$id": "2",
+      "Username": "diablo85000",
+      "DefaultChannel": {
+        "$id": "3"
+      }
+    }
+  ],
+  "ChannelLinks": [
+    {
+      "$id": "4",
+      "DiscordGuild": "503factory",
+      "DiscordChannel": "general",
+      "EcoChannel": "discord"
+    }
+  ],
+  "Debug": false
+}
