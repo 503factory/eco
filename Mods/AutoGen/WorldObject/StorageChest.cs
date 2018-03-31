@@ -48,7 +48,7 @@ namespace Eco.Mods.TechTree
             this.GetComponent<MinimapComponent>().Initialize("Storage");                                 
 
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(16);
+            storage.Initialize(32);
             storage.Storage.AddRestriction(new NotCarriedRestriction()); // can't store block or large items
 
 
