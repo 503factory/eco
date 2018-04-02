@@ -40,9 +40,9 @@ namespace Eco.Mods.TechTree
         {
             base.Initialize();
             
-            this.GetComponent<FuelSupplyComponent>().Initialize(4, fuelTypeList);
-            this.GetComponent<FuelConsumptionComponent>().Initialize(40);
-            this.GetComponent<AirPollutionComponent>().Initialize(0.2f);
+            this.GetComponent<FuelSupplyComponent>().Initialize(2, fuelTypeList);
+            this.GetComponent<FuelConsumptionComponent>().Initialize(20);
+            this.GetComponent<AirPollutionComponent>().Initialize(0.4f);
             this.GetComponent<VehicleComponent>().Initialize(30, 1, roadEfficiency);
             this.GetComponent<VehicleToolComponent>().Initialize(6, 0, new DirtItem(), 100, 200);
         }
