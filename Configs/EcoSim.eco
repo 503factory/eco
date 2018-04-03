@@ -12312,7 +12312,7 @@
     "MaxCO2PerDayFromAnimals": 10.0,
     "MinCO2PerDayFromPlants": -100.0,
     "PollutionPerTailingPerTick": 0.016,
-    "MaxDebrisBlocks": 5.0
+    "MaxDebrisBlocks": 1.0
   },
   "Interactions": {
     "$id": "772",

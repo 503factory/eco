@@ -1,8 +1,9 @@
 {
   "$id": "1",
+  "Seed": 766738735,
   "Dimensions": {
-    "x": 200,
-    "y": 200
+    "x": 172,
+    "y": 172
   },
   "WaterLevel": 40,
   "Height": 100,
@@ -33,8 +34,8 @@
     "MinPlateauHeight": -0.1,
     "CliffChance": 0.8,
     "RadiusRange": {
-      "min": 12.0,
-      "max": 24.0
+      "min": 24.0,
+      "max": 48.0
     },
     "SlopeRange": {
       "min": 3.0,

@@ -1,5 +1,5 @@
 {
-    "$id": "1",
-    "BackupFrequencyInHours": 4,
-    "NumBackupsToKeep": 5
+  "$id": "1",
+  "BackupFrequencyInHours": 4,
+  "NumBackupsToKeep": 6
 }

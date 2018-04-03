@@ -1,9 +1,9 @@
 {
   "$id": "1",
-  "CollaborationPreset": "MediumCollaboration",
+  "CollaborationPreset": "HighCollaboration",
   "UnlearnRefundRate": 0.5,
-  "SpecialtyCostMultiplier": 1.0,
-  "SkillGainMultiplier": 5.0,
-  "SkillPointsPerAction": 0.5,
-  "SkillPointPerCrafttime": 0.5
+  "SpecialtyCostMultiplier": 1.4,
+  "SkillGainMultiplier": 1.0,
+  "SkillPointsPerAction": 0.0001,
+  "SkillPointsPerCrafttime": 0.0001
 }
