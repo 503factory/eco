@@ -18,7 +18,7 @@ namespace Eco.Mods.TechTree
     {
         public override bool TryPlaceObject(Player player, Vector3i position, Quaternion rotation)
         {
-            Vector3i startPosition = position - new Vector3i((int)(StockpileComponent.Dimensions.x / 2f), 1, (int)(StockpileComponent.Dimensions.z / 2f));
+            Vector3i startPosition = position - new Vector3i((int)(StockpileComponent.Dimensions.x / 3f), 1, (int)(StockpileComponent.Dimensions.z / 3f));
             foreach (var offset in StockpileComponent.Dimensions.XZ.XYIter())
             {
                 var worldPos = startPosition + offset.X_Z();
