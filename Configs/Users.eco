@@ -34,9 +34,9 @@
  },
  "MaxSlots": "4",
  "SpawnLocation": {
-  "x": 330,
-  "y": 0,
-  "z": 130
+  "x": 97,
+  "y": 52,
+  "z": 609
  },
  "UseExactSpawnLocation": false,
  "Reputations": {

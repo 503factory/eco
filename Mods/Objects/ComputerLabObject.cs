@@ -25,7 +25,7 @@ namespace Eco.Mods.TechTree
             this.GetComponent<MinimapComponent>().Initialize("Computer Lab");
             this.GetComponent<LinkComponent>().Initialize(5);
             this.GetComponent<PowerGridComponent>().Initialize(10.0f, new ElectricPower());
-            this.GetComponent<PowerGridNetworkComponent>().Initialize(new Dictionary<Type, int> { { typeof(LaserObject), 4 }, { typeof(ComputerLabObject), 1 } }, true);
+            this.GetComponent<PowerGridNetworkComponent>().Initialize(new Dictionary<Type, int> { { typeof(LaserObject), 8 }, { typeof(ComputerLabObject), 1 } }, true);
         }
     }
 }
