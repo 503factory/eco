@@ -32,7 +32,6 @@ namespace Eco.Mods.TechTree
     
     [Serialized]    
     [RequireComponent(typeof(OnOffComponent))]                   
-    [RequireComponent(typeof(AttachmentComponent))]
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(MinimapComponent))]                
     [RequireComponent(typeof(PowerGridComponent))]              
@@ -48,7 +47,7 @@ namespace Eco.Mods.TechTree
         protected override void Initialize()
         {
             this.GetComponent<MinimapComponent>().Initialize("Lights");                                 
-            this.GetComponent<PowerConsumptionComponent>().Initialize(1000);                      
+            this.GetComponent<PowerConsumptionComponent>().Initialize(250);                      
             this.GetComponent<PowerGridComponent>().Initialize(10, new ElectricPower());        
             this.GetComponent<HousingComponent>().Set(SteelFloorLampItem.HousingVal);                                
 

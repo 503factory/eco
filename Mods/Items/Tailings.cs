@@ -100,7 +100,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized, Weight(30), StartsDiscovered]
-    [MaxStackSize(20)]
+    [MaxStackSize(10)]
     [RequiresTool(typeof(ShovelItem))]
     public class TailingsItem : BlockItem<TailingsBlock>
     {

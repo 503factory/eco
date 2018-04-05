@@ -33,113 +33,113 @@
   }
  },
  "MaxSlots": "4",
-  "SpawnLocation": {
-    "x": 330,
-    "y": 0,
-    "z": 130
-  },
-  "UseExactSpawnLocation": false,
-  "Reputations": {
-    "$id": "5",
-    "Eco.Gameplay.Economy.ReputationTitle": {
-      "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], mscorlib",
-      "$values": [
-        {
-          "$id": "6",
-          "MaxReputation": -500.0,
-          "Title": "Reprehensible"
-        },
-        {
-          "$id": "7",
-          "MaxReputation": -200.0,
-          "Title": "Abhorred"
-        },
-        {
-          "$id": "8",
-          "MaxReputation": -100.0,
-          "Title": "Nefarious"
-        },
-        {
-          "$id": "9",
-          "MaxReputation": -50.0,
-          "Title": "Shunned"
-        },
-        {
-          "$id": "10",
-          "MaxReputation": -20.0,
-          "Title": "Ill-Regarded"
-        },
-        {
-          "$id": "11",
-          "MaxReputation": -10.0,
-          "Title": "Unfavorable"
-        },
-        {
-          "$id": "12",
-          "MaxReputation": -5.0,
-          "Title": "Questionable"
-        },
-        {
-          "$id": "13",
-          "MaxReputation": -2.0,
-          "Title": "Uncertain"
-        },
-        {
-          "$id": "14",
-          "MaxReputation": -1.0,
-          "Title": "Unknown"
-        },
-        {
-          "$id": "15",
-          "MaxReputation": 1.0,
-          "Title": "Unknown"
-        },
-        {
-          "$id": "16",
-          "MaxReputation": 2.0,
-          "Title": "Helpful"
-        },
-        {
-          "$id": "17",
-          "MaxReputation": 5.0,
-          "Title": "Respected"
-        },
-        {
-          "$id": "18",
-          "MaxReputation": 10.0,
-          "Title": "Friendly"
-        },
-        {
-          "$id": "19",
-          "MaxReputation": 20.0,
-          "Title": "Well-Regarded"
-        },
-        {
-          "$id": "20",
-          "MaxReputation": 50.0,
-          "Title": "Esteemed"
-        },
-        {
-          "$id": "21",
-          "MaxReputation": 100.0,
-          "Title": "Celebrated"
-        },
-        {
-          "$id": "22",
-          "MaxReputation": 200.0,
-          "Title": "Honored"
-        },
-        {
-          "$id": "23",
-          "MaxReputation": 500.0,
-          "Title": "Revered"
-        },
-        {
-          "$id": "24",
-          "MaxReputation": 1000.0,
-          "Title": "Exalted"
-        }
-      ]
+ "SpawnLocation": {
+  "x": 330,
+  "y": 0,
+  "z": 130
+ },
+ "UseExactSpawnLocation": false,
+ "Reputations": {
+  "$id": "5",
+  "Eco.Gameplay.Economy.ReputationTitle": {
+   "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], mscorlib",
+   "$values": [
+    {
+     "$id": "6",
+     "MaxReputation": -500.0,
+     "Title": "Reprehensible"
+    },
+    {
+     "$id": "7",
+     "MaxReputation": -200.0,
+     "Title": "Abhorred"
+    },
+    {
+     "$id": "8",
+     "MaxReputation": -100.0,
+     "Title": "Nefarious"
+    },
+    {
+     "$id": "9",
+     "MaxReputation": -50.0,
+     "Title": "Shunned"
+    },
+    {
+     "$id": "10",
+     "MaxReputation": -20.0,
+     "Title": "Ill-Regarded"
+    },
+    {
+     "$id": "11",
+     "MaxReputation": -10.0,
+     "Title": "Unfavorable"
+    },
+    {
+     "$id": "12",
+     "MaxReputation": -5.0,
+     "Title": "Questionable"
+    },
+    {
+     "$id": "13",
+     "MaxReputation": -2.0,
+     "Title": "Uncertain"
+    },
+    {
+     "$id": "14",
+     "MaxReputation": -1.0,
+     "Title": "Unknown"
+    },
+    {
+     "$id": "15",
+     "MaxReputation": 1.0,
+     "Title": "Unknown"
+    },
+    {
+     "$id": "16",
+     "MaxReputation": 2.0,
+     "Title": "Helpful"
+    },
+    {
+     "$id": "17",
+     "MaxReputation": 5.0,
+     "Title": "Respected"
+    },
+    {
+     "$id": "18",
+     "MaxReputation": 10.0,
+     "Title": "Friendly"
+    },
+    {
+     "$id": "19",
+     "MaxReputation": 20.0,
+     "Title": "Well-Regarded"
+    },
+    {
+     "$id": "20",
+     "MaxReputation": 50.0,
+     "Title": "Esteemed"
+    },
+    {
+     "$id": "21",
+     "MaxReputation": 100.0,
+     "Title": "Celebrated"
+    },
+    {
+     "$id": "22",
+     "MaxReputation": 200.0,
+     "Title": "Honored"
+    },
+    {
+     "$id": "23",
+     "MaxReputation": 500.0,
+     "Title": "Revered"
+    },
+    {
+     "$id": "24",
+     "MaxReputation": 1000.0,
+     "Title": "Exalted"
     }
+   ]
   }
+ }
 }

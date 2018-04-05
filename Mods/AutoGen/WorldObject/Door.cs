@@ -31,10 +31,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     
     [Serialized]    
-    [RequireComponent(typeof(AttachmentComponent))]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(MinimapComponent))]                
-    [RequireComponent(typeof(CraftingComponent))]               
     [RequireComponent(typeof(SolidGroundComponent))]            
     public partial class DoorObject : 
         WorldObject    
@@ -44,7 +41,6 @@ namespace Eco.Mods.TechTree
 
         protected override void Initialize()
         {
-            this.GetComponent<MinimapComponent>().Initialize("Misc");                                 
 
 
 

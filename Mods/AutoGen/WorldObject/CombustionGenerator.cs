@@ -32,7 +32,6 @@ namespace Eco.Mods.TechTree
     
     [Serialized]    
     [RequireComponent(typeof(OnOffComponent))]                   
-    [RequireComponent(typeof(AttachmentComponent))]
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(MinimapComponent))]                
     [RequireComponent(typeof(LinkComponent))]                   

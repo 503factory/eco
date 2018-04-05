@@ -47,7 +47,7 @@ namespace Eco.Mods.TechTree
     { }
 
     [Serialized]
-    [MaxStackSize(10)]                                       
+    [MaxStackSize(20)]                           
     [Weight(10000)]      
     [Currency]              
     public partial class GlassItem :
@@ -57,6 +57,18 @@ namespace Eco.Mods.TechTree
         public override string FriendlyNamePlural { get { return "Glass"; } } 
         public override string Description { get { return "A transparent, solid material useful for more than just windows."; } }
 
+
+        private static Type[] blockTypes = new Type[] {
+            typeof(GlassStacked1Block),
+            typeof(GlassStacked2Block),
+            typeof(GlassStacked3Block),
+            typeof(GlassStacked4Block)
+        };
+        public override Type[] BlockTypes { get { return blockTypes; } }
     }
 
+    [Serialized, Solid] public class GlassStacked1Block : PickupableBlock { }
+    [Serialized, Solid] public class GlassStacked2Block : PickupableBlock { }
+    [Serialized, Solid] public class GlassStacked3Block : PickupableBlock { }
+    [Serialized, Solid,Wall] public class GlassStacked4Block : PickupableBlock { } //Only a wall if it's all 4 Glass
 }

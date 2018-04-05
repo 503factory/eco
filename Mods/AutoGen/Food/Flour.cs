@@ -22,7 +22,7 @@ namespace Eco.Mods.TechTree
     {
         public override string FriendlyName                     { get { return "Flour"; } }
         public override string FriendlyNamePlural               { get { return "Flour"; } } 
-        public override string Description                      { get { return "A fine, milled wheat product that�'s useful for all baking."; } }
+        public override string Description                      { get { return "A fine, milled wheat product that's useful for all baking."; } }
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 15, Fat = 0, Protein = 0, Vitamins = 0};
         public override float Calories                          { get { return 50; } }

@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
     
     [Serialized]    
     [RequireComponent(typeof(PipeComponent))]                    
-    [RequireComponent(typeof(AttachmentComponent))]
+    [RequireComponent(typeof(AttachmentComponent))]              
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(MinimapComponent))]                
     [RequireComponent(typeof(LinkComponent))]                   

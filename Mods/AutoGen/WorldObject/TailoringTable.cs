@@ -31,7 +31,6 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     
     [Serialized]    
-    [RequireComponent(typeof(AttachmentComponent))]
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(MinimapComponent))]                
     [RequireComponent(typeof(LinkComponent))]                   
@@ -66,7 +65,7 @@ namespace Eco.Mods.TechTree
     public partial class TailoringTableItem : WorldObjectItem<TailoringTableObject>
     {
         public override string FriendlyName { get { return "Tailoring Table"; } } 
-        public override string Description  { get { return  "Spearhead the fashion movement with the finest clothes and� hair!"; } }
+        public override string Description  { get { return  "Spearhead the fashion movement with the finest clothes and hair!"; } }
 
         static TailoringTableItem()
         {

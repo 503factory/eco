@@ -31,7 +31,6 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     
     [Serialized]    
-    [RequireComponent(typeof(AttachmentComponent))]
     [RequireComponent(typeof(PropertyAuthComponent))]
     [RequireComponent(typeof(MinimapComponent))]                
     [RequireComponent(typeof(LinkComponent))]                   
@@ -48,7 +47,7 @@ namespace Eco.Mods.TechTree
             this.GetComponent<MinimapComponent>().Initialize("Storage");                                 
 
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(32);
+            storage.Initialize(16);
             storage.Storage.AddRestriction(new NotCarriedRestriction()); // can't store block or large items
 
 

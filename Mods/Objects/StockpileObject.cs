@@ -18,7 +18,7 @@ namespace Eco.Mods.TechTree
     {
         public override bool TryPlaceObject(Player player, Vector3i position, Quaternion rotation)
         {
-            Vector3i startPosition = position - new Vector3i((int)(StockpileComponent.Dimensions.x / 3f), 1, (int)(StockpileComponent.Dimensions.z / 3f));
+            Vector3i startPosition = position - new Vector3i((int)(StockpileComponent.Dimensions.x / 2f), 1, (int)(StockpileComponent.Dimensions.z / 2f));
             foreach (var offset in StockpileComponent.Dimensions.XZ.XYIter())
             {
                 var worldPos = startPosition + offset.X_Z();
@@ -50,7 +50,7 @@ namespace Eco.Mods.TechTree
             storage.Storage.AddRestriction(new CarriedRestriction()); // restrict stockpiles to carried items.
 
             this.GetComponent<PropertyAuthComponent>().Initialize(AuthModeType.Inherited);
-            this.GetComponent<LinkComponent>().Initialize(9);
+            this.GetComponent<LinkComponent>().Initialize(7);
         }
 
         public override void SendInitialState(BSONObject bsonObj, INetObjectViewer viewer)

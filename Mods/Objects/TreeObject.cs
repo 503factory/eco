@@ -93,7 +93,7 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
 
     // estimated, need to get better measurements w/ and w/o Top branch
     private static readonly float[] GrowthThresholds = new float[7] { 0.20f, 0.28f, 0.38f, 0.48f, 0.57f, 0.78f, 0.95f };
-    [Serialized] private int CurrentGrowthThreshold = 0;
+    private int CurrentGrowthThreshold = 0;
 
     public double LastUpdateTime { get; private set; }
     float lastKeyframeTime;
@@ -247,6 +247,9 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
     {
         base.Initialize();
 
+        // Fill in occupancy (CurrentThreshold shouldn't get serialized so this will fill the whole tree)
+        this.GrowthPercent = this.growthPercent;
+
         if (!this.Fallen)
             MinimapManager.AddMinimapObject(this);
     }
@@ -260,76 +263,79 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
 
     void PickupLog(Player player, Guid logID)
     {
-        if (!this.CanHarvest)
-            player.SendTemporaryErrorLoc("Log is not ready for harvest.  Remove all branches first.");
-
-        TrunkPiece trunk;
-        trunk = this.trunkPieces.FirstOrDefault(p => p.ID == logID);
-        if (trunk != null && trunk.Collected == false)
+        lock (this)
         {
-            // check log size, if its too big, it can't be picked up
-            if (!this.CanPickup(trunk))
-            {
-                player.SendTemporaryErrorLoc("Log is too large to pick up, slice into smaller pieces first.");
-                return;
-            }
+            if (!this.CanHarvest)
+                player.SendTemporaryErrorLoc("Log is not ready for harvest.  Remove all branches first.");
 
-            var resourceType    = this.Species.ResourceItem;
-            var resource        = Item.Get(resourceType);
-            int baseCount       = this.GetBasePickupSize(trunk);
-            var yield           = resource.Yield;
-            int bonusItems      = yield != null ? yield.GetCurrentValueInt(player.User) : 0;
-            int numItems        = baseCount + bonusItems;
-
-            var destroyLog = true;
-            if (numItems > 0)
+            TrunkPiece trunk;
+            trunk = this.trunkPieces.FirstOrDefault(p => p.ID == logID);
+            if (trunk != null && trunk.Collected == false)
             {
-                var carried = player.User.Inventory.Carried;
-                if (!carried.IsEmpty)
+                // check log size, if its too big, it can't be picked up
+                if (!this.CanPickup(trunk))
                 {
-                    // If we're carrying the same type, we may be able to carry this too.
-                    if (carried.Stacks.First().Item.Type == resourceType.Type)
+                    player.SendTemporaryErrorLoc("Log is too large to pick up, slice into smaller pieces first.");
+                    return;
+                }
+
+                var resourceType = this.Species.ResourceItem;
+                var resource = Item.Get(resourceType);
+                int baseCount = this.GetBasePickupSize(trunk);
+                var yield = resource.Yield;
+                int bonusItems = yield != null ? yield.GetCurrentValueInt(player.User) : 0;
+                int numItems = baseCount + bonusItems;
+
+                var destroyLog = true;
+                if (numItems > 0)
+                {
+                    var carried = player.User.Inventory.Carried;
+                    if (!carried.IsEmpty)
                     {
-                        var currentCarried = carried.Stacks.First().Quantity;
-                        var maxCarry = resource.MaxStackSize;
-                        if (currentCarried + numItems > maxCarry)
+                        // If we're carrying the same type, we may be able to carry this too.
+                        if (carried.Stacks.First().Item.Type == resourceType.Type)
                         {
-                            var s = FormattableStringFactory.Create("You can't carry {0:number} more {1:items} ({2} max).", numItems, resource.UILink(numItems != 1 ? ItemLinkType.ShowPlural : 0), maxCarry);
+                            var currentCarried = carried.Stacks.First().Quantity;
+                            var maxCarry = resource.MaxStackSize;
+                            if (currentCarried + numItems > maxCarry)
+                            {
+                                var s = FormattableStringFactory.Create("You can't carry {0:number} more {1:items} ({2} max).", numItems, resource.UILink(numItems != 1 ? ItemLinkType.ShowPlural : 0), maxCarry);
+                                player.SendTemporaryError(s);
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            var s = FormattableStringFactory.Create("You are already carrying {0:items} and cannot pick up {1:items}.", carried.Stacks.First().Item.UILink(ItemLinkType.ShowPlural), resource.UILink(ItemLinkType.ShowPlural));
                             player.SendTemporaryError(s);
+
                             return;
                         }
                     }
-                    else
-                    {
-                        var s = FormattableStringFactory.Create("You are already carrying {0:items} and cannot pick up {1:items}.", carried.Stacks.First().Item.UILink(ItemLinkType.ShowPlural), resource.UILink(ItemLinkType.ShowPlural));
-                        player.SendTemporaryError(s);
-                            
-                        return;
-                    }
+
+                    if (!player.User.Inventory.TryAddItems(this.Species.ResourceItem.Type, numItems, player.User))
+                        destroyLog = false;
                 }
-                    
-                if (!player.User.Inventory.TryAddItems(this.Species.ResourceItem.Type, numItems, player.User))
-                    destroyLog = false;
+
+                if (destroyLog)
+                {
+                    trunk.Collected = true;
+                    this.RPC("DestroyLog", logID);
+
+                    ActionManager.ActionPerformed(new HarvestGameAction()
+                    {
+                        HarvestedSpecies = this.Species,
+                        HarvestedStacks = (new ItemStack(Item.Get(this.Species.ResourceItem.Type), numItems)).SingleItemAsEnumerable(),
+                        TargetObj = this,
+                        TargetPos = this.Position.Round,
+                        User = player.User,
+                        OrganismDestroyed = !this.Ripe
+                    });
+                }
+
+                this.Save();
+                this.CheckDestroy();
             }
-
-            if (destroyLog)
-            {
-                trunk.Collected = true;
-                this.RPC("DestroyLog", logID);
-
-                ActionManager.ActionPerformed(new HarvestGameAction() 
-                { 
-                    HarvestedSpecies  = this.Species,
-                    HarvestedStacks   = (new ItemStack(Item.Get(this.Species.ResourceItem.Type), numItems)).SingleItemAsEnumerable(),
-                    TargetObj         = this,
-                    TargetPos         = this.Position.Round,
-                    User              = player.User,
-                    OrganismDestroyed = !this.Ripe
-                });
-            }
-
-            this.Save();
-            this.CheckDestroy();
         }
     }
 
@@ -365,54 +371,55 @@ public class TreeEntity : Tree, IInteractableObject, IDamageable, IMinimapObject
     
     private bool TrySliceTrunk(Player player, float slicePoint)
     {
-        // find the trunk piece this is coming from
-        TrunkPiece target = this.trunkPieces.Where(p => p.SliceStart < slicePoint && p.SliceEnd > slicePoint).FirstOrDefault();
-        if (target == null)
-            return false;
-        else
+        lock (this) // prevent threading issues due to multiple choppers
         {
-            // if this is a tiny slice, clamp to the nearest valid size
-            const float minPieceResources = 5f;
-            float minPieceSize = minPieceResources / this.resourceMultiplier;
-            float targetSize = target.SliceEnd - target.SliceStart;
-            float targetResources = targetSize * this.resourceMultiplier;
-            float newPieceSize = target.SliceEnd - slicePoint;
-            float newPieceResources = newPieceSize * this.resourceMultiplier;
-            if (targetResources <= minPieceResources)
-                return false; // can't slice, too small
-
-            if (targetResources < (2 * minPieceResources))              // if smaller than 2x the min size, slice directly in half
-                slicePoint = target.SliceStart + (.5f * targetSize);
-            else if (newPieceSize < minPieceSize)                       // round down to nearest slice point where the resulting block will be the size of the log            
-                slicePoint = target.SliceEnd - minPieceSize;
-            else if (slicePoint - target.SliceStart <= minPieceSize)    // round up
-                slicePoint = target.SliceStart + minPieceSize;
-
-            // slice and assign new IDs (New piece is always the back end of the source piece)
-            var newPiece = new TrunkPiece()
+            // find the trunk piece this is coming from
+            TrunkPiece target = this.trunkPieces.Where(p => p.SliceStart < slicePoint && p.SliceEnd > slicePoint).FirstOrDefault();
+            if (target == null)
+                return false;
+            else
             {
-                ID = Guid.NewGuid(),
-                SliceStart = slicePoint,
-                SliceEnd = target.SliceEnd,
-                Position = target.Position,
-                Rotation = target.Rotation,
-            };
-            this.trunkPieces.Add(newPiece);
-            target.SliceEnd = slicePoint;
+                // if this is a tiny slice, clamp to the nearest valid size
+                const float minPieceResources = 5f;
+                float minPieceSize = minPieceResources / this.resourceMultiplier;
+                float targetSize = target.SliceEnd - target.SliceStart;
+                float targetResources = targetSize * this.resourceMultiplier;
+                float newPieceSize = target.SliceEnd - slicePoint;
+                float newPieceResources = newPieceSize * this.resourceMultiplier;
+                if (targetResources <= minPieceResources)
+                    return false; // can't slice, too small
 
-            // ensure the pieces are listed in order
-            this.trunkPieces.Sort((a, b) => a.SliceStart.CompareTo(b.SliceStart));
+                if (targetResources < (2 * minPieceResources))              // if smaller than 2x the min size, slice directly in half
+                    slicePoint = target.SliceStart + (.5f * targetSize);
+                else if (newPieceSize < minPieceSize)                       // round down to nearest slice point where the resulting block will be the size of the log            
+                    slicePoint = target.SliceEnd - minPieceSize;
+                else if (slicePoint - target.SliceStart <= minPieceSize)    // round up
+                    slicePoint = target.SliceStart + minPieceSize;
 
-            // reciprocate to clients
-            this.RPC("SliceTrunk", slicePoint, target.ID, newPiece.ID);
+                // slice and assign new IDs (New piece is always the back end of the source piece)
+                var newPiece = new TrunkPiece()
+                {
+                    ID = Guid.NewGuid(),
+                    SliceStart = slicePoint,
+                    SliceEnd = target.SliceEnd,
+                    Position = target.Position,
+                    Rotation = target.Rotation,
+                };
+                this.trunkPieces.Add(newPiece);
+                target.SliceEnd = slicePoint;
 
-            this.CheckDestroy();
-            
-            PlantSimEvents.OnLogChopped.Invoke(player.FriendlyName);
+                // ensure the pieces are listed in order
+                this.trunkPieces.Sort((a, b) => a.SliceStart.CompareTo(b.SliceStart));
 
-            this.Save();
-            return true;
-        }            
+                // reciprocate to clients
+                this.RPC("SliceTrunk", slicePoint, target.ID, newPiece.ID);
+
+                PlantSimEvents.OnLogChopped.Invoke(player.FriendlyName);
+
+                this.Save();
+                return true;
+            }
+        }         
     }
 
     [RPC]
