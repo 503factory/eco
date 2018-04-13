@@ -32,7 +32,7 @@
    ]
   }
  },
- "MaxSlots": "4",
+ "MaxSlots": "250",
  "SpawnLocation": {
   "x": 97,
   "y": 52,

@@ -46,11 +46,11 @@ namespace Eco.Mods.TechTree
             base.Initialize();
             
             var storage = this.GetComponent<PublicStorageComponent>();
-            storage.Initialize(100);
+            storage.Initialize(StockpileComponent.Dimensions.x * StockpileComponent.Dimensions.z);
             storage.Storage.AddRestriction(new CarriedRestriction()); // restrict stockpiles to carried items.
 
             this.GetComponent<PropertyAuthComponent>().Initialize(AuthModeType.Inherited);
-            this.GetComponent<LinkComponent>().Initialize(9);
+            this.GetComponent<LinkComponent>().Initialize(7);
         }
 
         public override void SendInitialState(BSONObject bsonObj, INetObjectViewer viewer)

@@ -39,7 +39,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(500)]  
     [Category("Tool")]
-    public partial class PulpFillerItem : FertilizerItem
+    public partial class PulpFillerItem : FertilizerItem<PulpFillerItem>
     {
         public override string FriendlyName { get { return "Pulp Filler"; } }
         public override string Description  { get { return ""; } }

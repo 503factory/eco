@@ -39,7 +39,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(500)]  
     [Category("Tool")]
-    public partial class BloodMealFertilizerItem : FertilizerItem
+    public partial class BloodMealFertilizerItem : FertilizerItem<BloodMealFertilizerItem>
     {
         public override string FriendlyName { get { return "Blood Meal Fertilizer"; } }
         public override string Description  { get { return ""; } }

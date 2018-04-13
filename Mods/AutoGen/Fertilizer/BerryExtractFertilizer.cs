@@ -39,7 +39,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(500)]  
     [Category("Tool")]
-    public partial class BerryExtractFertilizerItem : FertilizerItem
+    public partial class BerryExtractFertilizerItem : FertilizerItem<BerryExtractFertilizerItem>
     {
         public override string FriendlyName { get { return "Berry Extract Fertilizer"; } }
         public override string Description  { get { return ""; } }

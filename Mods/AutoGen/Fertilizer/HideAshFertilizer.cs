@@ -39,7 +39,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(500)]  
     [Category("Tool")]
-    public partial class HideAshFertilizerItem : FertilizerItem
+    public partial class HideAshFertilizerItem : FertilizerItem<HideAshFertilizerItem>
     {
         public override string FriendlyName { get { return "Hide Ash Fertilizer"; } }
         public override string Description  { get { return ""; } }

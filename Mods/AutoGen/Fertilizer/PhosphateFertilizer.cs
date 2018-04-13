@@ -39,7 +39,7 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(500)]  
     [Category("Tool")]
-    public partial class PhosphateFertilizerItem : FertilizerItem
+    public partial class PhosphateFertilizerItem : FertilizerItem<PhosphateFertilizerItem>
     {
         public override string FriendlyName { get { return "Phosphate Fertilizer"; } }
         public override string Description  { get { return ""; } }
