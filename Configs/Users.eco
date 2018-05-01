@@ -1,154 +1,143 @@
 {
-  "$id": "1",
-  "UseWaste": false,
-  "RequireAuthentication": false,
-  "AllowDebugCalls": false,
-  "WhiteList": {
-    "$id": "2",
-    "System.String": {
-      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": [
-        "76561198178857459",
-        "slg122480",
-        "76561198278939468",
-        "slg122536",
-        "76561198248482320",
-        "slg122483",
-        "53746172636974697a656e3134303957",
-        "53746172",
-        "42697442697457686974654c696f6e41",
-        "42697442"
-      ]
-    }
-  },
-  "BlackList": {
-    "$id": "3",
-    "System.String": {
-      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": []
-    }
-  },
-  "Admins": {
-    "$id": "4",
-    "System.String": {
-      "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
-      "$values": [
-        "slg100352",
-        "53746172636974697a656e3134303957",
-        "53746172",
-        "42697442697457686974654c696f6e41",
-        "42697442"
-      ]
-    }
-  },
-  "MaxSlots": 250,
-  "SpawnLocation": {
-    "x": 97,
-    "y": 52,
-    "z": 609
-  },
-  "UseExactSpawnLocation": false,
-  "Reputations": {
-    "$id": "5",
-    "Eco.Gameplay.Economy.ReputationTitle": {
-      "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], mscorlib",
-      "$values": [
-        {
-          "$id": "6",
-          "MaxReputation": -500.0,
-          "Title": "Reprehensible"
-        },
-        {
-          "$id": "7",
-          "MaxReputation": -200.0,
-          "Title": "Abhorred"
-        },
-        {
-          "$id": "8",
-          "MaxReputation": -100.0,
-          "Title": "Nefarious"
-        },
-        {
-          "$id": "9",
-          "MaxReputation": -50.0,
-          "Title": "Shunned"
-        },
-        {
-          "$id": "10",
-          "MaxReputation": -20.0,
-          "Title": "Ill-Regarded"
-        },
-        {
-          "$id": "11",
-          "MaxReputation": -10.0,
-          "Title": "Unfavorable"
-        },
-        {
-          "$id": "12",
-          "MaxReputation": -5.0,
-          "Title": "Questionable"
-        },
-        {
-          "$id": "13",
-          "MaxReputation": -2.0,
-          "Title": "Uncertain"
-        },
-        {
-          "$id": "14",
-          "MaxReputation": -1.0,
-          "Title": "Unknown"
-        },
-        {
-          "$id": "15",
-          "MaxReputation": 1.0,
-          "Title": "Unknown"
-        },
-        {
-          "$id": "16",
-          "MaxReputation": 2.0,
-          "Title": "Helpful"
-        },
-        {
-          "$id": "17",
-          "MaxReputation": 5.0,
-          "Title": "Respected"
-        },
-        {
-          "$id": "18",
-          "MaxReputation": 10.0,
-          "Title": "Friendly"
-        },
-        {
-          "$id": "19",
-          "MaxReputation": 20.0,
-          "Title": "Well-Regarded"
-        },
-        {
-          "$id": "20",
-          "MaxReputation": 50.0,
-          "Title": "Esteemed"
-        },
-        {
-          "$id": "21",
-          "MaxReputation": 100.0,
-          "Title": "Celebrated"
-        },
-        {
-          "$id": "22",
-          "MaxReputation": 200.0,
-          "Title": "Honored"
-        },
-        {
-          "$id": "23",
-          "MaxReputation": 500.0,
-          "Title": "Revered"
-        },
-        {
-          "$id": "24",
-          "MaxReputation": 1000.0,
-          "Title": "Exalted"
-        }
-      ]
-    }
+ "$id": "1",
+ "UseWaste": false,
+ "RequireAuthentication": false,
+ "AllowDebugCalls": false,
+ "WhiteList": {
+  "$id": "2",
+  "System.String": {
+   "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+   "$values": [
+    "wilsonn"
+   ]
   }
+ },
+ "BlackList": {
+  "$id": "3",
+  "System.String": {
+   "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+   "$values": []
+  }
+ },
+ "Admins": {
+  "$id": "4",
+  "System.String": {
+   "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+   "$values": [
+    "slg100352",
+    "53746172636974697a656e3134303957",
+    "53746172"
+   ]
+  }
+ },
+ "MaxSlots": "250",
+ "SpawnLocation": {
+  "x": 1118,
+  "y": 57,
+  "z": 1090
+ },
+ "UseExactSpawnLocation": false,
+ "Reputations": {
+  "$id": "5",
+  "Eco.Gameplay.Economy.ReputationTitle": {
+   "$type": "System.Collections.Generic.List`1[[Eco.Gameplay.Economy.ReputationTitle, Eco.Gameplay]], mscorlib",
+   "$values": [
+    {
+     "$id": "6",
+     "MaxReputation": -500.0,
+     "Title": "Reprehensible"
+    },
+    {
+     "$id": "7",
+     "MaxReputation": -200.0,
+     "Title": "Abhorred"
+    },
+    {
+     "$id": "8",
+     "MaxReputation": -100.0,
+     "Title": "Nefarious"
+    },
+    {
+     "$id": "9",
+     "MaxReputation": -50.0,
+     "Title": "Shunned"
+    },
+    {
+     "$id": "10",
+     "MaxReputation": -20.0,
+     "Title": "Ill-Regarded"
+    },
+    {
+     "$id": "11",
+     "MaxReputation": -10.0,
+     "Title": "Unfavorable"
+    },
+    {
+     "$id": "12",
+     "MaxReputation": -5.0,
+     "Title": "Questionable"
+    },
+    {
+     "$id": "13",
+     "MaxReputation": -2.0,
+     "Title": "Uncertain"
+    },
+    {
+     "$id": "14",
+     "MaxReputation": -1.0,
+     "Title": "Unknown"
+    },
+    {
+     "$id": "15",
+     "MaxReputation": 1.0,
+     "Title": "Unknown"
+    },
+    {
+     "$id": "16",
+     "MaxReputation": 2.0,
+     "Title": "Helpful"
+    },
+    {
+     "$id": "17",
+     "MaxReputation": 5.0,
+     "Title": "Respected"
+    },
+    {
+     "$id": "18",
+     "MaxReputation": 10.0,
+     "Title": "Friendly"
+    },
+    {
+     "$id": "19",
+     "MaxReputation": 20.0,
+     "Title": "Well-Regarded"
+    },
+    {
+     "$id": "20",
+     "MaxReputation": 50.0,
+     "Title": "Esteemed"
+    },
+    {
+     "$id": "21",
+     "MaxReputation": 100.0,
+     "Title": "Celebrated"
+    },
+    {
+     "$id": "22",
+     "MaxReputation": 200.0,
+     "Title": "Honored"
+    },
+    {
+     "$id": "23",
+     "MaxReputation": 500.0,
+     "Title": "Revered"
+    },
+    {
+     "$id": "24",
+     "MaxReputation": 1000.0,
+     "Title": "Exalted"
+    }
+   ]
+  }
+ }
 }

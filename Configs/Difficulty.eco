@@ -4,6 +4,6 @@
   "UnlearnRefundRate": 0.5,
   "SpecialtyCostMultiplier": 1.4,
   "SkillGainMultiplier": 1.1,
-  "SkillPointsPerAction": 0.0005,
-  "SkillPointsPerCrafttime": 0.0005
+  "SkillPointsPerAction": 0.0050,
+  "SkillPointsPerCrafttime": 0.0050
 }

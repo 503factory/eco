@@ -50,7 +50,7 @@ namespace Eco.Mods.TechTree
             storage.Storage.AddRestriction(new CarriedRestriction()); // restrict stockpiles to carried items.
 
             this.GetComponent<PropertyAuthComponent>().Initialize(AuthModeType.Inherited);
-            this.GetComponent<LinkComponent>().Initialize(7);
+            this.GetComponent<LinkComponent>().Initialize(9);
         }
 
         public override void SendInitialState(BSONObject bsonObj, INetObjectViewer viewer)
