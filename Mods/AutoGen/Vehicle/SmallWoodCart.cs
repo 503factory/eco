@@ -67,7 +67,7 @@ namespace Eco.Mods.TechTree
         {
             base.Initialize();
             
-            this.GetComponent<PublicStorageComponent>().Initialize(6, 750000);            
+            this.GetComponent<PublicStorageComponent>().Initialize(6, 3600000);            
             this.GetComponent<VehicleComponent>().Initialize(8, 1, roadEfficiency);
             this.GetComponent<VehicleComponent>().HumanPowered(0.5f);           
         }

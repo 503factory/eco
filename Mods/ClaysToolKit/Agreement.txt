@@ -1,0 +1,71 @@
+﻿
+End-User License Agreement ("Agreement")
+
+
+Last updated: (13.10.2017)
+
+
+Please read this End-User License Agreement ("Agreement") carefully before downloading or using any of the files.
+ 
+Representing GreenLeaf and GreenMods, in the present document, with the ownership right of the Community and Mods, Munteanu Florin is the Owner of the files and the rights to them; the person using or downloading the files is, in the present document, User.
+In the following document the End-User License Agreement will be called "Agreement", Munteanu Florin and all approved redistributing parts will be called "Owner", GreenMods and all the files(files and applications) attached will be called "GreenMods", anyone using or downloading the GreenMods will be called User.
+
+By downloading or using GreenMods(files and applications), you are agreeing to be bound by the terms and conditions of this Agreement(End-User License Agreement).
+
+
+If you do not agree to the terms of this Agreement, DO NOT download or use GreenMods.
+
+
+License
+
+
+The Owner part grants you(the User part) a revocable, non-exclusive, non-transferable, limited license to download, install and use GreenMods solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
+
+
+Restrictions
+
+
+You (User) agree not to, and you will not permit others to:
+
+
+a) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the files or make the files available to any third party.
+
+	
+
+Modifications to GreenMods
+The Owner reserves the right to modify, suspend or discontinue, temporarily or permanently, the use of GreenMods or any service to which it connects, with or without notice and without liability to you(User).
+	
+
+Term and Termination
+
+
+This Agreement shall remain in effect until terminated by the User or the Owner. 
+
+
+The Owner may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
+
+
+This Agreement will terminate immediately, without prior notice from the Owner or any affiliate of GreenLeaf and GreenMods, in the event that the User fails to comply with any provision of this Agreement. You, the User, may also terminate this Agreement by deleting GreenMods files and all copies thereof from your server(s) or any device that can store the said files.
+
+
+Upon termination of this Agreement, the User shall cease all use of the files and delete all copies of GreenMods from his or her devices.
+
+
+Severability
+
+
+If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+
+
+Amendments to this Agreement
+
+
+Munuteanu Florin, the Owner, reserves the right, at its sole discretion, to material change, update or replace this Agreement at any time. If a revision is made I(Munteanu Florin, or any other approved Owner) will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at the Owers sole discretion.
+
+
+Contact Information
+
+
+If you have any questions about this Agreement, please contact me.
+GreenLeaf e-mail: phlo@greenleafserver.com
+Personal e-mail: binary.fang@gmail.com
